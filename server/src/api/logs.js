@@ -11,7 +11,7 @@ const {
 const router = Router();
 
 const rateLimitDelay = 10 * 1000; // 10 second delay
-const limiter = new RateLimit({
+const limiter = RateLimit({
   store: new MongoStore({
     uri: DATABASE_URL,
     expireTimeMs: rateLimitDelay,
